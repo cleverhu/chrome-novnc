@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  chrome-novnc:
+    image: registry.study-k8s.com/deeplythink/chrome-novnc:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: chrome-novnc
+    environment:
+      - PORT=9870
+      - VNC_PASS=Aa123123
+    ports:
+      - "9870:9870"
+      - "19222:19222"

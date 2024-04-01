@@ -13,12 +13,12 @@ if __name__ == "__main__":
             exit()
         app_name = os.getenv("APP_NAME")
         while True:
-            try:
-                requests.get(f"https://{app_name}.herokuapp.com")
-            except:
-                print("Ping failed, retrying...")
-                try:
-                    requests.get(f"https://{app_name}.herokuapp.com")
-                except:
-                    print("Cannot ping app, terminating...")
+#             try:
+#                 requests.get(f"https://{app_name}.herokuapp.com")
+#             except:
+#                 print("Ping failed, retrying...")
+#                 try:
+#                     requests.get(f"https://{app_name}.herokuapp.com")
+#                 except:
+#                     print("Cannot ping app, terminating...")
             sleep(25*60)

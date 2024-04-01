@@ -32,8 +32,10 @@ SHELL ["/bin/bash", "-c"]
 RUN	apt-get update && \
 	apt-get install -y tzdata ca-certificates supervisor curl wget python3 python3-pip sed unzip xvfb x11vnc websockify openbox libnss3 libgbm-dev libasound2 fonts-droid-fallback && \
 #Chromium
-	wget https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/Linux_x64%2F1235467%2Fchrome-linux.zip?alt=media -O /tmp/chrome-linux.zip && \
-	unzip /tmp/chrome-linux.zip -d /opt && \
+#	wget https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/Linux_x64%2F1235467%2Fchrome-linux.zip?alt=media -O /tmp/chrome-linux.zip && \
+#	unzip /tmp/chrome-linux.zip -d /opt && \
+    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
+    dpkg -i google-chrome-stable_current_amd64.deb \
 #noVNC
 	openssl req -new -newkey rsa:4096 -days 36500 -nodes -x509 -subj "/C=IN/ST=Maharastra/L=Private/O=Dis/CN=www.google.com" -keyout /etc/ssl/novnc.key  -out /etc/ssl/novnc.cert && \
 #TimeZone
